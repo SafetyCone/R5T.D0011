@@ -1,10 +1,13 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
+
+using R5T.T0064;
 
 
 namespace R5T.D0011.Default
 {
-    public class ConstructorValueProcessStartTimeUtcProvider : IProcessStartTimeUtcProvider
+    [ServiceImplementationMarker]
+    public class ConstructorValueProcessStartTimeUtcProvider : IProcessStartTimeUtcProvider, IServiceImplementation
     {
         #region Static
 
@@ -45,7 +48,8 @@ namespace R5T.D0011.Default
         private DateTime ProcessStartTimeUtc { get; }
 
 
-        public ConstructorValueProcessStartTimeUtcProvider(DateTime processStartTimeUtc)
+        public ConstructorValueProcessStartTimeUtcProvider(
+            [NotServiceComponent] DateTime processStartTimeUtc)
         {
             this.ProcessStartTimeUtc = processStartTimeUtc;
         }

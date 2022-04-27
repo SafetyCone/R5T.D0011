@@ -1,10 +1,10 @@
-﻿using System;
-using System.Threading.Tasks;
+using System;
+using System.Threading.Tasks;using R5T.T0064;
 
 
 namespace R5T.D0011.Default
-{
-    public class StaticValueProcessStartTimeUtcProvider : IProcessStartTimeUtcProvider
+{[ServiceImplementationMarker]
+    public class StaticValueProcessStartTimeUtcProvider : IProcessStartTimeUtcProvider,IServiceImplementation
     {
         /// <summary>
         /// Note: not thread-safe.

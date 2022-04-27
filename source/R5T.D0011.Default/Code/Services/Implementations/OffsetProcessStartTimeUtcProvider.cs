@@ -1,11 +1,14 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
+
+using R5T.T0064;
 
 
 namespace R5T.D0011.Default
 {
-    public class OffsetProcessStartTimeUtcProvider : IProcessStartTimeUtcProvider
+    [ServiceImplementationMarker]
+    public class OffsetProcessStartTimeUtcProvider : IProcessStartTimeUtcProvider, IServiceImplementation
     {
         #region Static
 
@@ -46,7 +49,8 @@ namespace R5T.D0011.Default
         private TimeSpan Offset { get; }
 
 
-        public OffsetProcessStartTimeUtcProvider(TimeSpan offset)
+        public OffsetProcessStartTimeUtcProvider(
+            [NotServiceComponent] TimeSpan offset)
         {
             this.Offset = offset;
         }

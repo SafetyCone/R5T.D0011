@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 using System.Diagnostics;
-using System.Threading.Tasks;
+using System.Threading.Tasks;using R5T.T0064;
 
 
 namespace R5T.D0011.Default
-{
-    public class ProcessStartTimeUtcProvider : IProcessStartTimeUtcProvider
+{[ServiceImplementationMarker]
+    public class ProcessStartTimeUtcProvider : IProcessStartTimeUtcProvider,IServiceImplementation
     {
         public Task<DateTime> GetProcessStartTimeUtcAsync()
         {
